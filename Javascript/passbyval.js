@@ -3,7 +3,7 @@
 // for primitive data-types
 var a = 10
 function printNO( A ){                // Pass by value
-    A = 20
+    var A = 20
     console.log(A)
 }
 printNO(a)

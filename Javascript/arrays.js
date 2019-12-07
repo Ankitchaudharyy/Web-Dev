@@ -54,7 +54,7 @@ let omit2 = notes.slice(4, 6)           // omit2 - [so', 'la']
 console.log(omit, omit2, notes)         // notes - ['do', 're', 'mi', 'fa', 'so', 'la', 'ti', 'do']
 
 let omit3 = notes.splice(5)             // omit3 - ['la', 'ti', 'do']
-let omit4 = notes.splice(0, 3, "DO", "RE", "MI")
+let omit4 = notes.splice(0, 3, "DO", "RE", "MI")            // omit4 - ['DO', 'RE', 'MI', 'fa', 'so' ]
 console.log(omit3, notes)               // notes - ['do', 're', 'mi', 'fa', 'so']
 
 let notes2 = ['sa','re', 'ga', 'ma', 'pa']
