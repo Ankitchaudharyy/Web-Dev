@@ -1,4 +1,8 @@
 
+/*
+promisify -> Converts a callback function to a Function returning Promise
+*/
+
 const utils = require('util');
 
 function download(URL, downloaded){
@@ -75,7 +79,7 @@ const downloadPromise = utils.promisify(download)
 const compressPromise = utils.promisify(compress)
 const uploadPromise = utils.promisify(upload)
 
-download('http://www.somesite.com/image.jpg')
-.then((File) => compress(File, 'zip'))
-.then((Archive) => upload('ftp://www.files.com', Archive))
+downloadPromise('http://www.somesite.com/image.jpg')
+.then((File) => compressPromise(File, 'zip'))
+.then((Archive) => uploadPromise('ftp://www.files.com', Archive))
 .catch((err) => console.error(err))
