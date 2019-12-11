@@ -1,6 +1,6 @@
 
 /*
-callbackify -> Converts a Function returning Promise to a 
+callbackify -> Converts a Function returning Promise to a callback Function
 */
 
 const utils = require('util');
@@ -54,6 +54,15 @@ function upload(SERVER, FILE, uploaded){
 }
 
 
+/* download('http://www.somesite.com/image.jpg')
+    .then((File) => compress(File, 'zip'))
+    .catch((err) => console.error(err))
+    .then((Archive) => upload('ftp://www.files.com', Archive))
+    .catch((err) => console.error(err))
+    .catch((err) => console.error(err))
+ */
+
+ 
 const downloadCB = utils.callbackify(download)
 const compressCB = utils.callbackify(compress)
 const uploadCB = utils.callbackify(upload)
